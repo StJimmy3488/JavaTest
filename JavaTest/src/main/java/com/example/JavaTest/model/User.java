@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.HashSet;
+import java.util.Set;
 
 @Table(name = "user")
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long id;
     @NotNull
@@ -40,11 +40,15 @@ public class User {
 //    @NotNull
 //    @Column(nullable = false)
 //    private LocalDate contractEndDate;
+@ManyToMany(fetch = FetchType.LAZY)
+@JoinTable(
+        name = "user_contract", joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "contract_id"))
+private Set<Contract> contracts = new HashSet<>();
 
     public int getUserAge() {
         return Period.between(this.userBirthDate, LocalDate.now()).getYears();
     }
-
 }
 
 
