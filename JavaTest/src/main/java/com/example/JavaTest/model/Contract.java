@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import java.util.Set;
 public class Contract {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "contract_id")
     private Long id;
     @NotNull
@@ -25,8 +26,11 @@ public class Contract {
     @NotNull
     @Column(name = "contract_price", nullable = false)
     private Float contractPrice;
+    @Column(name = "contract_start_date")
+    private LocalDate contractStartDate;
+//    private LocalDate contractEndDate;
     @ManyToMany(mappedBy = "contracts")
-//    @ToString.Exclude   //to prevent stack over flow
+    @ToString.Exclude   //to prevent stack over flow
     private Set<User> userSet = new HashSet<>();
 
 

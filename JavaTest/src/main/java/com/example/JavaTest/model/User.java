@@ -33,7 +33,7 @@ public class User {
     private Integer Age;
     @NotNull
     @Column(name = "user_type_id")
-    private Integer userTypeId;
+    private Long userTypeId;
 //    @NotNull
 //    @Column(nullable = false)
 //    private LocalDate contractStartDate;   //add days left
