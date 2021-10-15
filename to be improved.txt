@@ -1,0 +1,4 @@
+-precision and scope for contract_price not working
+-fix table matching issue
+-add required functionality(search, remove)
+-view layer
