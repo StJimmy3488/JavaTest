@@ -5,15 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-
-
-import javax.persistence.*;
 
 
 @Table(name = "user_type")
@@ -23,7 +17,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class UserType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @NotNull
@@ -34,4 +28,5 @@ public class UserType {
     @OneToMany
     @JoinColumn(name = "user_type_id")
     private Set<User> users = new HashSet<>(); //prevents inserting duplicates
+
 }

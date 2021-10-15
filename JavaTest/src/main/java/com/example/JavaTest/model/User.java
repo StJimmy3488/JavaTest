@@ -1,7 +1,6 @@
 package com.example.JavaTest.model;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,16 +16,14 @@ import java.util.Set;
 @NoArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
     @NotNull
     @Column(name = "user_name", nullable = false)
     private String userName;
-    @NotNull
-    @Column(name = "user_surname", nullable = false)
+    @Column(name = "user_surname")
     private String userSurname;
-    @NotNull
     @Column(name = "user_dob")
     private LocalDate userBirthDate;
     @Transient

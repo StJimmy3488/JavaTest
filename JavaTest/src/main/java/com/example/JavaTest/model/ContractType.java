@@ -14,13 +14,18 @@ import java.util.Set;
 @NoArgsConstructor
 public class ContractType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "contract_type_id")
     private Long id;
     @NotNull
     @Column(name = "contract_type")
     private String contractType;
+    @NotNull
+    @Column(name = "contract_price",
+            precision = 16,
+            scale = 2, nullable = false)
+    private Float contractPrice;
     @OneToMany
-    @JoinColumn(name = "contract_id")
+    @JoinColumn(name = "id")
     private Set<Contract> contracts = new HashSet<>();
 }

@@ -1,11 +1,18 @@
 package com.example.JavaTest.service;
 
+import com.example.JavaTest.model.User;
 import com.example.JavaTest.repository.UserRepository;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-@Data
+@RequiredArgsConstructor
 public class UserService {
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
+
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
 }
