@@ -31,12 +31,7 @@ public class User {
     @NotNull
     @Column(name = "user_type_id")
     private Long userTypeId;
-//    @NotNull
-//    @Column(nullable = false)
-//    private LocalDate contractStartDate;   //add days left
-//    @NotNull
-//    @Column(nullable = false)
-//    private LocalDate contractEndDate;
+
 @ManyToMany(fetch = FetchType.LAZY)
 @JoinTable(
         name = "user_contract", joinColumns = @JoinColumn(name = "user_id"),

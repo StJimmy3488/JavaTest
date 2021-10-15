@@ -12,9 +12,4 @@ public class ContractTypeController {
     @Autowired
     public ContractTypeService contractTypeService;
 
-//    @GetMapping
-//    public String listAllContracts(Model model) {
-//        model.addAttribute("all_contracts2", contractTypeService.findAll());
-//        return "contract";
-//    }
 }

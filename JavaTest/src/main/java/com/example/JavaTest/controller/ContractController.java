@@ -22,19 +22,7 @@ public class ContractController {
         model.addAttribute("all_contracts", contractService.findAll());
         model.addAttribute("all_contract_types", contractTypeService.findAll());
         return "contract";
-//    }
-//    @GetMapping
-//    public String addNewClient(Model model) {
-//        Contract contract = new Contract();
-//        model.addAttribute("contract", contract);
-//        return "add_contract";
-//    }
-//    @PostMapping()
-//    public String saveCustomer(@ModelAttribute("contract") Contract contract, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors())
-//            return "contract/add_contract";
-//        contractService.saveContract(contract);
-//        return "redirect:/contract";
+
     }
 
 }

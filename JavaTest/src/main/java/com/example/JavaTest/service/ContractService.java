@@ -19,9 +19,4 @@ public class ContractService {
     public Contract saveContract(Contract contract) {
         return contractRepository.save(contract);
     }
-//    public List<Contract> findByName() {
-//        return contractRepository.findByContractType(Contract contract) {
-//
-//        }
-//    }
 }

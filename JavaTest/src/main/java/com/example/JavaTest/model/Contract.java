@@ -19,10 +19,6 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "contract_id")
     private Long id;
-//    @NotNull
-//    @Column(name = "contract_type_id", nullable = false)
-//    private Long contractTypeId;
-
     @Temporal(TemporalType.DATE)
     @Column(name = "contract_start_date")
     private Date contractStartDate;
