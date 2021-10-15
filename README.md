@@ -2,10 +2,13 @@
 
 <h3>Introduction</h3>
 This Administration panel is a test exercise to demonstrate my developing skills. 
+
 Main aim was to develop API, using Spring Boot and Spring Data, that have 3 main functions:
-1. Inserting new contracts function;
-2. Search function with possibility to search by different filters;
-3. Retrieving contract from user function;
+<ol>
+<li> Inserting new contracts function;</li>
+<li> Search function with possibility to search by different filters;</li>
+<li> Retrieving contract from user function;</li>
+</ol>
 
 Some functionality was added/to be added to make application more user friendly, and fullfill criteria of programming paradigms and patterns.
 
