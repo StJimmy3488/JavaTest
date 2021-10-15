@@ -10,10 +10,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("/api")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -25,17 +27,17 @@ public class UserController {
     public String listAllUsers(Model model) {
         model.addAttribute("all_users", userService.findAll());
         model.addAttribute("all_users_types", userTypeService.findAll());
-        return "users";
+        return "contract";
     }
     @GetMapping("/add_user")
     public String addNewUser(@ModelAttribute("user") User user) {
-        return "add_user";
+        return "add_contract";
     }
     @PostMapping()
     public String saveUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
-            return "add_user";
+            return "add_contract";
         userService.saveUser(user);
-        return "redirect:/users";
+        return "redirect:/contract";
     }
 }

@@ -18,8 +18,8 @@ public class ContractType {
     @Column(name = "contract_type_id")
     private Long id;
     @NotNull
-    @Column(name = "contract_type")
-    private String contractType;
+    @Column(name = "contract_type_name")
+    private String contractTypeName;
     @NotNull
     @Column(name = "contract_price",
             precision = 16,
